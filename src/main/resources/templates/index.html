@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Welcome, This is the main page!</h2>
+<a href="/admin">Admin Page</a> <br/>
+
+<!--If registeration worked sucessfully a message is going to show -->
+<div th:if="${param.message}">
+    [[${param.message}]]
+</div>
+
+
+<form th:action="@{/logout}" method ="post">
+    <input type="submit" value="Logout">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<h2> Registration </h2>
+<!--user class user is passed & message + we must validate the inputs -->
+<form autocomplete="off"   th:action="@{/register}" th:object="${user}" th:method="post">
+
+     First Name: <input type="text" placeholder="First Name" th:field="*{firstName}" id="firstName"/>
+    <mark><strong>
+        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Invalid first name </span>
+    </strong></mark>
+    <br/>
+
+     Last Name: <input type="text" placeholder="Last Name" th:field="*{lastName}" id="lastName"/>
+    <mark><strong>
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Invalid Last name </span>
+    </strong></mark>
+    <br/>
+
+     Email: <input type="email" placeholder="Email" th:field="*{email}" id="email">
+    <mark><strong>
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Invalid email format </span>
+    </strong></mark>
+    <br/>
+
+     Username: <input type="text" placeholder="User Name" th:field="*{username}" id="username"/>
+    <mark><strong>
+        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Invalid first name </span>
+    </strong></mark>
+    <br/>
+
+     Password: <input type="text" placeholder="password" th:field="*{password}" id="password"/>
+    <mark><strong>
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Invalid first name </span>
+    </strong></mark>
+    <br/>
+
+    <input type="submit" value="Register">
+    <div th:if="${param.logout}">You have been logged out</div>
+
+
+
+
+</form>
+
+</body>
+</html>
