@@ -20,10 +20,10 @@ public class SpringSecurity404Application {
 			Role userRole = new Role("bart", "ROLE_USER");
 			userRepository.save(user);
 			roleRepository.save(userRole);
-			User admin = new User("super", "super@domain.com", "super", "Super", "Man", true);
-			Role adminRole = new Role("super", "ROLE_ADMIN");
+			User admin = new User("admin", "super@domain.com", "admin", "Super", "Man", true);
+			Role adminRole = new Role("admin", "ROLE_ADMIN");
 			//How to dispaly twp roles of the same user added on for 405
-			Role adminRole2 = new Role("super", "ROLE_USER");
+			Role adminRole2 = new Role("admin", "ROLE_USER");
 			userRepository.save(admin);
 			roleRepository.save(adminRole);
 			roleRepository.save(adminRole2);

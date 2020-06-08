@@ -7,10 +7,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Set;
 
 
 @Entity
-@Table(name="users_db") public class User {
+@Table(name="users_db")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -35,10 +37,15 @@ import javax.validation.constraints.Size;
     @NotEmpty
     private String lastName;
 
+
     @Column (name = "enabled")
     private boolean enabled;
 
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+//    private Set<Message> messages;
+
     public User() {
+//        this.messages=null;
     }
     public void setPassword(String password) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); this.password = passwordEncoder.encode(password);
@@ -107,4 +114,12 @@ import javax.validation.constraints.Size;
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
+//    public Set<Message> getMessages() {
+//        return messages;
+//    }
+//
+//    public void setMessages(Set<Message> messages) {
+//        this.messages = messages;
+//    }
 }
