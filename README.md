@@ -1,4 +1,4 @@
-# Connectiong: implements a site that will allow users to post what ever is on their minds.
+# Connection: implements a site that will allow users to post what ever is on their minds.
 <br> 
 It allows users register, login and post. Users can see what others have posted, while admin can delete message or user. 
 <br> 
