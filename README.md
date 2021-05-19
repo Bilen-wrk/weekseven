@@ -2,7 +2,7 @@
 <br> 
 It allows users register, login and post. Users can see what others have posted, while admin can delete message or user. 
 <br> 
-##Used Languages 
+## Used Languages 
 <br> 
 1. Used OOP Java for the back0end. <br>
 2. HTML and CSS for the front-end.<br> 
